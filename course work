@@ -1,0 +1,228 @@
+#include <iostream>
+#include <string>
+
+using namespace std; 
+struct home {
+	string qala;
+	string area;
+	string adres;
+	string jk_name;
+	
+	int etaj;
+	int ploshad;
+	int bolme;
+	long int bagasy;
+};
+
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	int t; bool fasd=true;
+	int r, a, s;
+
+	string gorod, area;int max_baga, bolme_sany;
+	home flat[13] = { {"Астана","Алматы","Куйшы дина 23","ЖК Светлый",8,76,3,34000000},
+					  {"Алматы","Алатау","Монке Би","Каспий",3,68,2,28000000},
+					  {"Алматы","Ауезов","Аскарова","Apple-Residance",16,63,2,44950000},
+					  {"Алматы","Алатау","Дарабоз","Алатау",3,45,2,23200000},
+					  {"Астана","Сарыарка","  Абая 10/1","Столичый ",6,66,2,26376000},
+					  {"Астана","Алматы","Абая 45/1","Мерей",19,51 ,2,21000000},
+					  {"Алматы","Бостандык","Жароково 370","Актолкын-Гранд",12,40,1,35422000},
+					  {"Астана","Есиль","Туран 31","Turan Palace",11,96,3,39835000},
+					  {"Астана","Есиль","ЕК-15","GreenLine",7,47,2,26114000},
+					  {"Астана","Сарыарка","Тлендиева 42 ","Кутты мекен",8,33,1,14276000},
+					  {"Астана","Есиль","Туран 55/6","Сезим Кала",4,37,1,20500000},
+					  {"Астана","Алматы","Калдаякова 11","Жк Гранд Астана",4,140,3,45500000},
+	};
+	cout << "сиз патер сатуды калайсыз ба? алде сатып алуды ма?\n сату ушин 1 басыныз , сатып алу ушин 2 басыныз: ";
+	cin >> t;
+	while (t < 1 || t>2) {
+		cout << "ондай сан жок: \n 1)сату \n 2)сатып алу ";
+		cin >>t;
+	}
+	switch (t)
+	{
+	case 1:
+		cout << " Кай каладан саткыныз келеды: \n1)Aстана \n2)Aлматы \nкала:";
+		cin >> r; 
+		while (r > 2 || r < 1) {
+			cout << "Ондай сан жок: \n1)Aстана \n2)Aлматы \nкала: ";
+			cin >> r;
+		}
+		switch (r)
+		{
+		case 1: 
+			flat[12].qala = "Aстана";
+			cout << "кай районда: \n1)Есиль\n2)Aлматы\n3)Байконыр\n4)Сарыарка:";
+			cin >> s;
+			if (s > 4 || s < 1) {
+				while (s > 4 || s < 1) {
+					cout << "ондай сан жок: \n1)Есиль\n2)Aлматы\n3)Байконыр\n4)Сарыарка \nаудан:  ";
+					cin >> s;
+				}
+			}
+			switch (s)
+			{
+			case 1: flat[12].area = "Есиль"; break;
+			case 2:flat[12].area = "Aлматы"; break;
+			case 3:flat[12].area = "Байконыр"; break;
+			case 4:flat[12].area = "Сарыарка"; break;
+			default:
+				break;
+			}
+			cout << "Кай кошеде орналаскан?: ";
+			cin >> flat[12].adres;
+
+			cout << "нешинши кабат?: ";
+			cin >> flat[12].etaj;
+
+			cout << "Уйдын ауданы кандай?: ";
+			cin >> flat[12].ploshad;
+
+			cout << "Неше болмелы уй?: ";
+			cin >> flat[12].bolme;
+
+			cout << "Кандай багага сатасыз?: ";
+			cin >> flat[12].bagasy;
+
+			cout << "Сиздин хабарландыруыныз : "<<endl;
+			cout << "Кала :" << flat[12].qala;
+			cout << "\nРайон : " << flat[12].area;
+			cout << "\n Kошесы : " << flat[12].adres;
+			cout << "\n Этаж " << flat[12].etaj;
+			cout << "\n Ауданы :" << flat[12].ploshad;
+			cout << "\n болме саны: " << flat[12].bolme;
+			cout << "\n Багасы :" << flat[12].bagasy;
+			cout << "\nсиздин хабарландыруыныз сатти жарияланды";
+			
+			break;
+		case 2: 
+			flat[12].qala = "Алматы"; 
+			cout << "кай ауданда: \n1)Алатау\n2)Алмалы\n3)Ауезов\n4)Бостандык\n5)Жетысу\n6)Медеу\n7)Наурызбаев\n8)Турксиб:";
+			cin >> s;
+			while (s > 8|| s < 1) {
+				if (s > 8 || s < 1) {
+					cout << "oндай сан жок: \n1)Алатау\n2)Алмалы\n3)Ауезов\n4)Бостандык\n5)Жетысу\n6)Медеу\n7)Наурызбаев\n8)Турксиб \nаудан:  ";
+					cin >> s;
+				}
+			}
+			switch (s)
+			{
+			case 1: flat[12].area = "Алатау"; break;
+			case 2:flat[12].area = "Алмалы"; break;
+			case 3:flat[12].area = "Ауезов"; break;
+			case 4:flat[12].area = "Бостандык"; break;
+			case 5:flat[12].area = "Жетысу"; break;
+			case 6:flat[12].area = "Медеу"; break;
+			case 7:flat[12].area = "Наурызбаев"; break;
+			case 8:flat[12].area = "Турксиб"; break;
+			
+			}
+			cout << "Кай кошеде орналаскан?: ";
+			cin >> flat[12].adres;
+
+			cout << "нешинши кабат?: ";
+			cin >> flat[12].etaj;
+
+			cout << "Уйдын ауданы кандай?: ";
+			cin >> flat[12].ploshad;
+
+			cout << "Неше болмелы уй?: ";
+			cin >> flat[12].bolme;
+
+			cout << "Кандай багага сатасыз?: ";
+			cin >> flat[12].bagasy;
+
+			cout << "Сиздин хабарландыруыныз : " << endl;
+			cout << "Кала :" << flat[12].qala;
+			cout << "\nРайон : " << flat[12].area;
+			cout << "\n Kошесы : " << flat[12].adres;
+			cout << "\n Этаж " << flat[12].etaj;
+			cout << "\n Ауданы :" << flat[12].ploshad;
+			cout << "\n болме саны: " << flat[12].bolme;
+			cout << "\n Багасы :" << flat[12].bagasy;
+			cout << "\nсиздин хабарламаныз сатти жарияланды";
+			break;
+		}
+		break;
+
+		
+	case 2:
+		int q, w, e;
+
+		cout << "Кай каладан уй издедыныз : \n 1)Астана \n2)Алматы \nкала:" << endl;
+		cin >> q;
+		while (q > 2 || q < 1) {
+			if (q > 2 || q < 1) {
+				cout << " Ондай вариант жок, кайта енгызыныз ";
+				cin >> q;
+			}
+		}
+		switch (q)
+		{
+		case 1: gorod = "Астана"; 
+			cout << "Кай ауданды тандайсыз ? : \n1)Алматы \n2)Есиль \n3)Сарыарка \n 4)Байконыр \nаудан: ";
+			cin >> w;
+			while (w < 1 || w>4) {
+				cout << "сиз тандаган вариант карастырылмаган, кайта енгызыныз  ";
+				cin >> w;
+			}
+			switch (w)
+			{
+			case 1:area = "Алматы"; break;
+			case 2: area = "Есиль"; break;
+			case 3: area = "Сарыарка"; break;
+			case 4: area = "Байконыр"; break;
+			}
+		
+			
+			break;
+		case 2: gorod = "Алматы"; 
+			cout << "Ауданды танданыз: \n1)Алатау\n2)Алмалы\n3)Ауезов\n4)Бостандык\n5)Жетусу\n6)Медеу\n7)Наурызбаев\n8)Турксиб \nаудан:";
+			cin >> s;
+			while (s > 8 || s < 1) {
+				if (s > 8 || s < 1) {
+					cout << "сиздин нусканыз карастырылмаган: \n1)Алатау\n2)Алмалы\n3)Ауезов\n4)Бостандык\n5)Жетусу\n6)Медеу\n7)Наурызбаев\n8)Турксиб \nаудан:  ";
+					cin >> s;
+				}
+			}
+			switch (s)
+			{
+			case 1: area = "Алатау"; break;
+			case 2:area = "Алмалы"; break;
+			case 3:area = "Ауезов"; break;
+			case 4:area = "Бостандык"; break;
+			case 5:area = "Жетусу"; break;
+			case 6:area = "Медеу"; break;
+			case 7:area = "Наурызбаев"; break;
+			case 8:area = "Турксиб"; break;
+			}
+			
+			break;
+		}
+		cout << " Максималды багасы? "; cin >> max_baga;
+		
+		cout << "Канша болме болуы кажет"; cin >> e;
+		for (int i = 0; i < 12; i++) {
+			if (flat[i].qala == gorod && flat[i].bagasy < max_baga && flat[i].area == area && flat[i].bolme >= e) {
+				cout << "келетын нуска :" << endl;
+				cout << "Кала :" << flat[i].qala;
+				cout << "\nАудан : " << flat[i].area;
+				cout << "\n Кошесы : " << flat[i].adres;
+				cout << "\n ЖК Аты : " << flat[i].jk_name;
+				cout << "\n Этаж " << flat[i].etaj;
+				cout << "\n Ауданы :" << flat[i].ploshad;
+				cout << "\n Болме саны: " << flat[i].bolme;
+				cout << "\nБагасы :" << flat[i].bagasy<<endl;
+			}
+			else fasd = false;
+		}
+		if (fasd==false) {
+			cout << "сиздин критериймен уй жок ";
+		}
+		
+		break;
+	}
+	
+}
+
